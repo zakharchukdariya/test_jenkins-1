@@ -10,7 +10,11 @@ pipeline  {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    //stages {
+    stages {
+        stage("Print hello")
+        steps {
+            echo "Hello world!";
+        }
     //    stage("Create docker image") {
    //         steps {
    //             echo 'Creating docker image ...'
@@ -70,5 +74,5 @@ pipeline  {
         //     }
         //}
 
-  //  }
+   }
 }
