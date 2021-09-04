@@ -11,9 +11,10 @@ pipeline  {
         timestamps()
     }
     stages {
-        stage("Print hello")
-        steps {
-            echo "Hello world!";
+        stage("Print hello"){
+            steps {
+                echo "Hello world!";
+            }
         }
     //    stage("Create docker image") {
    //         steps {
