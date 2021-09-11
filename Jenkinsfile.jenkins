@@ -13,9 +13,12 @@ pipeline  {
     stages {
         stage("Print hello"){
             steps {
-                echo "Hello world!";
-                cat /etc/os-release
-                df -h
+                sh '''
+                    echo "Hello world!";
+                    cat /etc/os-release
+                    df -h
+                '''
+                
             }
         }
     //    stage("Create docker image") {
