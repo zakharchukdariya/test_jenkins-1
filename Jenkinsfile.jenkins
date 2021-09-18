@@ -63,14 +63,14 @@ pipeline  {
                '''
            }
        }
- //       stage("docker run") {
- //           steps {
- //               echo " ============== starting chatterbox server =================="
- //               sh '''
- //               docker run -d --restart=always --name chatterboxserver -p 3200:3200 macnaer/chatterboxserver
- //              '''
- //           }
-  //      }
+       stage("docker run") {
+           steps {
+               echo " ============== starting chatterbox server =================="
+               sh '''
+               docker run -d --restart=always --name webserver -p 80:80 macnaer/testsite
+              '''
+           }
+       }
         // stage("Deploy to stage server") {
         //     steps {
         //         echo " ============== Running playbook =================="
