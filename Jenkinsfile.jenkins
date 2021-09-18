@@ -47,14 +47,14 @@ pipeline  {
                '''
            }
        }
- //       stage("docker stop") {
- //           steps {
- //               echo " ============== stoping all images =================="
- //               sh '''
- //               docker stop chatterboxserver
-  //              '''
-  //          }
-//        } 
+       stage("docker stop") {
+           steps {
+               echo " ============== stoping all images =================="
+               sh '''
+               docker stop $(ps -a -q)
+               '''
+           }
+       } 
 //        stage("docker remove") {
 //            steps {
  //               echo " ============== removing all docker containers =================="
